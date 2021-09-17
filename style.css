@@ -1,0 +1,80 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+header .container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page__title {
+  color: crimson;
+  margin: 0 0 5px;
+}
+
+.page__logo {
+  width: 200px;
+}
+
+.alura__logo {
+  width: 40px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+::placeholder {
+  color: #191919;
+}
+
+.main__title {
+  color: #fff;
+  text-align: center;
+}
+
+main .container {
+  display: flex;
+  justify-content: center;
+}
+
+.adiciona__url {
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.adiciona__filme {
+  border-radius: 6px;
+  background-color: crimson;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lista__filmes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.imagemFilmes {
+  margin: 20px 0;
+}
+
+.mensagem__erro {
+  text-align: center;
+  color: crimson;
+  font-size: 20px;
+}
+
+body > img {
+  margin: 40px 10px;
+}
+
+img {
+  max-height: 250px;
+}
