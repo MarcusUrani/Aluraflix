@@ -15,7 +15,7 @@ botao.addEventListener("click", function () {
                 break;
             } else {
                 adicionarFilmesNaTela(filmeUrl);
-                var limparErro = "<p>" + "</p>";
+                var limparErro = "<p>" + "" + "</p>";
                 mensagemErroDiv.innerHTML = limparErro;
             }
         }
