@@ -40,18 +40,29 @@ header .container {
 main .container {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
-.adiciona__url {
+.adiciona__url,
+.adiciona__link {
   padding: 3px;
   border-radius: 6px;
 }
 
-.adiciona__filme {
-  border-radius: 6px;
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.adiciona__item/*, .remove__item*/ {
+  border-radius: 10px;
   background-color: crimson;
   color: #fff;
   cursor: pointer;
+  padding: 10px;
 }
 
 .lista__filmes {
@@ -77,4 +88,16 @@ body > img {
 
 img {
   max-height: 250px;
+}
+
+img:hover {
+  max-height: 260px;
+  opacity: 75%;
+}
+
+.rodape {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  padding: 2rem;
 }
