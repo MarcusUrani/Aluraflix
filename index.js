@@ -1,10 +1,14 @@
 var inputFilme = document.querySelector(".adiciona__url");
-var botao = document.querySelector(".adiciona__filme");
+var inputTrailer = document.querySelector(".adiciona__link");
+var botaoAdiciona = document.querySelector(".adiciona__item");
+var botaoRemove = document.querySelector(".remove__item");
 var listaFilmes = document.querySelector(".lista__filmes");
 var mensagemErroDiv = document.querySelector(".mensagem__erro");
 var filmes = [""];
+var filmeUrl = inputFilme.value;
+var trailerUrl = inputTrailer.value;
 
-botao.addEventListener("click", function () {
+botaoAdiciona.addEventListener("click", function () {
   var filmeUrl = inputFilme.value;
   if (
     filmeUrl.endsWith(".jpg") ||
@@ -30,10 +34,18 @@ botao.addEventListener("click", function () {
     mensagemErroDiv.innerHTML = mensagemErro;
   }
   inputFilme.value = "";
+  inputTrailer.value = "";
 });
 
 function adicionarFilmesNaTela(filme) {
-  var elementoFilme = '<img class = "imagemFilmes" src =' + filme + ">";
+  var trailerUrl = inputTrailer.value;
+  var elementoFilme =
+    "<a target =_blank href =" +
+    trailerUrl +
+    ">" +
+    "<img class = imagemFilmes src =" +
+    filme +
+    ">";
   listaFilmes.innerHTML = listaFilmes.innerHTML + elementoFilme;
   filmes.push(filme);
 }
