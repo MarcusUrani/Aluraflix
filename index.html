@@ -8,48 +8,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
-  <title>Aluraflix - Aula 04</title>
+  <title>Aluraflix</title>
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="page__title">Aluraflix</h1>
-      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg" class="page__logo"
+    <section class="header__container">
+      <h1 class="header__title">Aluraflix</h1>
+      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg" class="header__logo"
         alt="logo imersão dev">
-    </div>
-    <div class="logo">
+    </section>
+    <figure class="logo">
       <a href="https://alura.com.br/" target="_blank">
-        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="Logo alura" class="alura__logo">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="Logo alura" class="header__alura__logo">
       </a>
-    </div>
+    </figure>
   </header>
   <main>
-    <h2 class="main__title">Adicione seus filmes, jogos, livros, séries, animes e mangás favoritos</h2>
-    <div class="container">
-      <input type="text" class="adiciona__url" placeholder="Insira o endereço da imagem">
-      <input type="text" class="adiciona__link" placeholder="Insira o link do trailer">
-    </div>
-    <div class="botoes">
-      <button class="adiciona__item">
+    <h2 class="main__title">Adicione seus filmes e séries favoritos</h2>
+    <section class="main__container">
+      <input type="text" class="main__add__url" placeholder="Insira o endereço da imagem">
+    </section>
+    <section class="main__button">
+      <button class="main__add__item">
         Adicionar item
       </button>
-      <!--       <button class = "remove__item">Remover item</button> -->
-    </div>
-    <div class="mensagem__erro">
-    </div>
-    <div class="lista__filmes">
-    </div>;
+    </section>
+    <section class="main__options">
+      <h2 class="main__options__title">Selecione seu filme</h2>
+      <section id="escolha" class="main__options__list">
+      </section>
+    </section>
+    <section class="main__movie__list">
+    </section>
   </main>
-  <footer class="rodape">
+  <footer>
     <a href="https://github.com/MarcusUrani" target="_blank">
-      <img src="https://i.imgur.com/SSvQAZy.png" alt="GitHub">
+      <img class="footer__link"src="https://i.imgur.com/SSvQAZy.png" alt="GitHub">
     </a>
-    <a href="https://www.linkedin.com/in/marcus-urani-553a4b21b/" target="_blank">
-      <img src="https://i.imgur.com/fgV9mOt.png" alt="LinkedIn">
+    <a href="https://www.linkedin.com/in/marcusurani" target="_blank">
+      <img class="footer__link" src="https://i.imgur.com/fgV9mOt.png" alt="LinkedIn">
     </a>
     <a href="mailto:marcus.urani20@gmail.com">
-      <img src="https://i.imgur.com/rUO94ml.png" alt="E-mail">
+      <img class="footer__link" src="https://i.imgur.com/rUO94ml.png" alt="E-mail">
     </a>
   </footer>
   </main>

@@ -1,51 +1,57 @@
-var inputFilme = document.querySelector(".adiciona__url");
-var inputTrailer = document.querySelector(".adiciona__link");
-var botaoAdiciona = document.querySelector(".adiciona__item");
-var botaoRemove = document.querySelector(".remove__item");
-var listaFilmes = document.querySelector(".lista__filmes");
-var mensagemErroDiv = document.querySelector(".mensagem__erro");
-var filmes = [""];
-var filmeUrl = inputFilme.value;
-var trailerUrl = inputTrailer.value;
+const API_KEY = "ef55d6697437c53087339ef162ae88b2";
+const BASE_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=pt-BR&query=`;
+const MOVIE_URL = "https://api.themoviedb.org/3/movie/";
+const movieInput = document.querySelector(".main__add__url");
+const addButton = document.querySelector(".main__add__item");
+const moviesList = document.querySelector(".main__movie__list");
+const mainOptions = document.querySelector(".main__options");
+const movieSection = document.querySelector("#escolha");
+var filmes = [];
 
-botaoAdiciona.addEventListener("click", function () {
-  var filmeUrl = inputFilme.value;
-  if (
-    filmeUrl.endsWith(".jpg") ||
-    filmeUrl.endsWith(".png") ||
-    filmeUrl.endsWith(".JPG") ||
-    filmeUrl.endsWith(".PNG") ||
-    filmeUrl.endsWith(".gif")
-  ) {
-    if (filmes.indexOf(filmeUrl) != -1) {
-      var mensagemFilmeRepetido =
-        "<p>" + "Erro, não é possível adicionar dois itens iguais" + "</p>";
-      mensagemErroDiv.innerHTML = mensagemFilmeRepetido;
-    } else {
-      adicionarFilmesNaTela(filmeUrl);
-      var limparErro = "<p>" + "" + "</p>";
-      mensagemErroDiv.innerHTML = limparErro;
-    }
+const fetchData = async (movieName) => {
+  const requisition = await fetch(`${BASE_URL}${movieName}`);
+  const response = await requisition.json();
+  return response;
+};
+
+const fetchMovie = async (id) => {
+  const requisition = await fetch(`${MOVIE_URL}${id}?api_key=${API_KEY}`);
+  const response = await requisition.json();
+  return response;
+};
+
+addButton.addEventListener("click", async () => {
+  if (movieInput.value) {
+    const data = await fetchData(movieInput.value);
+    const item = data.results
+      .map(
+        (item) =>
+          `<section class="movie__card" onclick="selectedItem(${item.id})" key=${item.id}>
+          <figure>
+            <img class="movie__card__poster" src="https://image.tmdb.org/t/p/w300${item.poster_path}" alt="Poster filme"/>
+          </figure>
+        <p class="movie__card__title">${item.original_title}</p>
+      </section>`
+      )
+      .join("");
+    movieSection.innerHTML = item;
+    moviesList.classList.add("disabled");
+    mainOptions.classList.remove("disabled");
   } else {
-    var mensagemErro =
-      "<p>" +
-      "Erro, não foi possível adicionar o item. É necessário inserir uma imagem .jpg" +
-      "</p>";
-    mensagemErroDiv.innerHTML = mensagemErro;
+    movieSection.innerHTML = "<p>Insira o nome do filme</p>";
   }
-  inputFilme.value = "";
-  inputTrailer.value = "";
 });
 
-function adicionarFilmesNaTela(filme) {
-  var trailerUrl = inputTrailer.value;
-  var elementoFilme =
-    "<a target =_blank href =" +
-    trailerUrl +
-    ">" +
-    "<img class = imagemFilmes src =" +
-    filme +
-    ">";
-  listaFilmes.innerHTML = listaFilmes.innerHTML + elementoFilme;
-  filmes.push(filme);
-}
+const selectedItem = async (id) => {
+  mainOptions.classList.add("disabled");
+  moviesList.classList.remove("disabled");
+  const data = await fetchMovie(id);
+  const movie = `
+  <section class="movie">
+    <img class="movie__poster" src="https://image.tmdb.org/t/p/w300${data.poster_path}" alt="Poster filme"/>
+    <p class="movie__title">${data.original_title}</p>
+  </section>
+  `;
+  moviesList.innerHTML = moviesList.innerHTML + movie;
+  filmes.push(movie);
+};

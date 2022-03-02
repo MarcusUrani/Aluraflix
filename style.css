@@ -7,21 +7,26 @@ body {
   background-size: cover;
 }
 
-header .container {
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+.header__container {
   text-align: center;
   padding: 20px;
 }
 
-.page__title {
+.header__title {
   color: crimson;
   margin: 0 0 5px;
 }
 
-.page__logo {
+.header__logo {
   width: 200px;
 }
 
-.alura__logo {
+.header__alura__logo {
   width: 40px;
   position: absolute;
   top: 15px;
@@ -37,19 +42,18 @@ header .container {
   text-align: center;
 }
 
-main .container {
+.main__container {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.adiciona__url,
-.adiciona__link {
+.main__add__url {
   padding: 3px;
   border-radius: 6px;
 }
 
-.botoes {
+.main__button {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -57,7 +61,7 @@ main .container {
   margin-bottom: 20px;
 }
 
-.adiciona__item/*, .remove__item*/ {
+.main__add__item {
   border-radius: 10px;
   background-color: crimson;
   color: #fff;
@@ -65,39 +69,92 @@ main .container {
   padding: 10px;
 }
 
-.lista__filmes {
+.main__options {
+  align-items: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.main__options__title {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.main__options__list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.movie__card {
+  text-align: center;
+  width: 25%;
+}
+
+.movie__card__title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.movie__card__poster {
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all ease 0.5s;
+  width: 200px;
+}
+
+.movie__card__poster:hover {
+  transform: scale(1);
+  opacity: 75%;
+}
+
+.main__movie__list {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 40px 0;
 }
 
-.imagemFilmes {
-  margin: 20px 0;
+.movie {
+  text-align: center;
+  width: 20%;
 }
 
-.mensagem__erro {
-  text-align: center;
-  color: crimson;
+.movie__title {
+  color: #fff;
   font-size: 20px;
 }
 
-body > img {
-  margin: 40px 10px;
+.movie__poster {
+  width: 250px;
 }
 
-img {
-  max-height: 250px;
-}
-
-img:hover {
-  max-height: 260px;
-  opacity: 75%;
-}
-
-.rodape {
+footer {
   display: flex;
   gap: 5rem;
   justify-content: center;
   padding: 2rem;
+}
+
+.footer__link {
+  transform: scale(0.9);
+  transition: all ease 0.5s;
+}
+
+.footer__link:hover {
+  transform: scale(1);
+  opacity: 75%;
+}
+
+.disabled {
+  display: none;
 }
