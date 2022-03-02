@@ -1,15 +1,15 @@
 body {
   font-family: "Lato", sans-serif;
-  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
   background-color: #000000;
-  background-repeat: no-repeat;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
   background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 figure {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .header__container {
@@ -27,10 +27,16 @@ figure {
 }
 
 .header__alura__logo {
-  width: 40px;
   position: absolute;
-  top: 15px;
   right: 15px;
+  top: 15px;
+  transition: all ease 0.3s;
+  width: 40px;
+}
+
+.header__alura__logo:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
 }
 
 ::placeholder {
@@ -49,34 +55,53 @@ figure {
 }
 
 .main__add__url {
-  padding: 3px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.main__add__url:focus {
+  outline: none;
 }
 
 .main__button {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
   margin-bottom: 20px;
+  margin-top: 25px;
 }
 
 .main__add__item {
-  border-radius: 10px;
   background-color: crimson;
+  border: none;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
   padding: 10px;
+  transition: all ease 0.3s;
+}
+
+.main__add__item:hover {
+  background-color: #fff;
+  color: crimson;
+}
+
+.main__add__item:focus {
+  outline: none;
+}
+
+.main__add__item:active {
+  transform: scale(0.9);
 }
 
 .main__options {
   align-items: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   margin: 0;
-  padding: 0;
   margin-top: 25px;
+  padding: 0;
 }
 
 .main__options__title {
@@ -116,11 +141,17 @@ figure {
   opacity: 75%;
 }
 
+.main__error {
+  color: #fff;
+  font-size: 25px;
+  margin-top: 25px;
+}
+
 .main__movie__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
-  flex-wrap: wrap;
   margin: 40px 0;
 }
 

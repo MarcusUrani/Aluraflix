@@ -38,7 +38,8 @@ addButton.addEventListener("click", async () => {
     moviesList.classList.add("disabled");
     mainOptions.classList.remove("disabled");
   } else {
-    movieSection.innerHTML = "<p>Insira o nome do filme</p>";
+    movieSection.innerHTML =
+      "<p class='main__error'>O campo de busca não pode estar vazio</p>";
   }
 });
 
