@@ -1,3 +1,11 @@
+/*Global Style*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: #000000;
@@ -5,12 +13,25 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
 }
 
 figure {
   margin: 0;
   padding: 0;
 }
+
+/*Header style*/
 
 .header__container {
   text-align: center;
@@ -39,12 +60,15 @@ figure {
   transform: scale(1.2);
 }
 
+/*Main style*/
+
 ::placeholder {
   color: #191919;
 }
 
 .main__title {
   color: #fff;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -55,9 +79,10 @@ figure {
 }
 
 .main__add__url {
+  border: none;
   border-radius: 10px;
   font-size: 14px;
-  padding: 4px;
+  padding: 5px;
 }
 
 .main__add__url:focus {
@@ -71,7 +96,7 @@ figure {
   margin-top: 25px;
 }
 
-.main__add__item {
+.button {
   background-color: crimson;
   border: none;
   border-radius: 10px;
@@ -81,18 +106,20 @@ figure {
   transition: all ease 0.3s;
 }
 
-.main__add__item:hover {
+.button:hover {
   background-color: #fff;
   color: crimson;
 }
 
-.main__add__item:focus {
+.button:focus {
   outline: none;
 }
 
-.main__add__item:active {
+.button:active {
   transform: scale(0.9);
 }
+
+/*Movie options style*/
 
 .main__options {
   align-items: center;
@@ -120,6 +147,7 @@ figure {
 }
 
 .movie__card {
+  margin-bottom: 25px;
   text-align: center;
   width: 25%;
 }
@@ -141,11 +169,7 @@ figure {
   opacity: 75%;
 }
 
-.main__error {
-  color: #fff;
-  font-size: 25px;
-  margin-top: 25px;
-}
+/*Choosen movies style*/
 
 .main__movie__list {
   display: flex;
@@ -169,6 +193,44 @@ figure {
   width: 250px;
 }
 
+/*Error message style*/
+
+.center {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.main__error__message {
+  align-items: center;
+  background-color: #dddddd;
+  border-radius: 10px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  justify-content: space-around;
+  height: 25%;
+  position: absolute;
+  width: 25%;
+  z-index: 999;
+}
+
+.main__error {
+  text-align: center;
+}
+
+/*Footer style*/
+
 footer {
   display: flex;
   gap: 5rem;
@@ -187,5 +249,6 @@ footer {
 }
 
 .disabled {
+  pointer-events: none;
   display: none;
 }
