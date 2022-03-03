@@ -2,7 +2,7 @@ const API_KEY = "ef55d6697437c53087339ef162ae88b2";
 const BASE_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=pt-BR&query=`;
 const MOVIE_URL = "https://api.themoviedb.org/3/movie/";
 const movieInput = document.querySelector(".main__add__url");
-const addButton = document.querySelector(".main__add__item");
+const searchButton = document.querySelector(".main__search__item");
 const moviesList = document.querySelector(".main__movie__list");
 const mainOptions = document.querySelector(".main__options");
 const movieSection = document.querySelector("#escolha");
@@ -10,7 +10,7 @@ const errorMessageSection = document.querySelector(".main__error__message");
 const errorSection = document.querySelector(".center");
 var movies = [];
 
-// Fazer a verificação de filmes repetidos
+// Busca o item pelo nome
 
 const fetchData = async (movieName) => {
   const requisition = await fetch(`${BASE_URL}${movieName}`);
@@ -18,13 +18,17 @@ const fetchData = async (movieName) => {
   return response;
 };
 
+// Busca o filme selecionado
+
 const fetchMovie = async (id) => {
   const requisition = await fetch(`${MOVIE_URL}${id}?api_key=${API_KEY}`);
   const response = await requisition.json();
   return response;
 };
 
-addButton.addEventListener("click", async () => {
+// Função para buscar um novo item
+
+searchButton.addEventListener("click", async () => {
   const error = `O campo de busca não pode estar vazio`;
   if (movieInput.value) {
     const data = await fetchData(movieInput.value);
@@ -47,11 +51,15 @@ addButton.addEventListener("click", async () => {
   }
 });
 
+// Verifica se há algum item repetido e caso não haja, adiciona a lista
 const selectedItem = async (id) => {
   mainOptions.classList.add("disabled");
   moviesList.classList.remove("disabled");
   const error = `Este item já foi adicionado`;
   const data = await fetchMovie(id);
+
+  // Faz a verificação de filmes repetidos
+
   const found = movies.find((item) => item.id === id);
   if (found) {
     errorWindow(error);
@@ -67,11 +75,14 @@ const selectedItem = async (id) => {
   }
 };
 
+// Fecha a mensagem de erro
+
 const closeWindow = () => {
   errorSection.classList.add("disabled");
   errorMessageSection.innerHTML = "";
 };
 
+// Monta a mensagem de erro
 const errorWindow = (errorMessage) => {
   const htmlItem = `<p class='main__error'>${errorMessage}</p>
     <button class='button' onclick='closeWindow()'>Fechar</button>`;
