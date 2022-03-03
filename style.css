@@ -1,5 +1,13 @@
 /*Global Style*/
 
+:root {
+  --black: #000;
+  --crimson: #dc143c;
+  --light-grey: #dddddd;
+  --secondary-black: #191919;
+  --white: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +16,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #000000;
+  background-color: var(--black);
   background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
   background-position: center top;
   background-repeat: no-repeat;
@@ -35,54 +43,54 @@ figure {
 
 .header__container {
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .header__title {
-  color: crimson;
-  margin: 0 0 5px;
+  color: var(--crimson);
+  margin: 0 0 0.3125rem 0;
 }
 
 .header__logo {
-  width: 200px;
+  width: 12.5rem;
 }
 
 .header__alura__logo {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 0.9375rem;
+  top: 0.9375rem;
   transition: all ease 0.3s;
-  width: 40px;
+  width: 2.5rem;
 }
 
 .header__alura__logo:hover {
   opacity: 0.7;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /*Main style*/
 
 ::placeholder {
-  color: #191919;
+  color: var(--secondary-black);
 }
 
 .main__title {
-  color: #fff;
-  margin-bottom: 20px;
+  color: var(--white);
+  margin-bottom: 1.25rem;
   text-align: center;
 }
 
 .main__container {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .main__add__url {
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  padding: 5px;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  padding: 0.3125rem;
 }
 
 .main__add__url:focus {
@@ -92,23 +100,23 @@ figure {
 .main__button {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 25px;
+  margin-bottom: 1.25rem;
+  margin-top: 1.5625rem;
 }
 
 .button {
-  background-color: crimson;
+  background-color: var(--crimson);
   border: none;
-  border-radius: 10px;
-  color: #fff;
+  border-radius: 0.625rem;
+  color: var(--white);
   cursor: pointer;
-  padding: 10px;
+  padding: 0.625rem;
   transition: all ease 0.3s;
 }
 
 .button:hover {
-  background-color: #fff;
-  color: crimson;
+  background-color: var(--white);
+  color: var(--crimson);
 }
 
 .button:focus {
@@ -127,14 +135,14 @@ figure {
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  margin-top: 25px;
+  margin-top: 1.5625rem;
   padding: 0;
 }
 
 .main__options__title {
-  color: #fff;
-  font-size: 40px;
-  margin-bottom: 20px;
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .main__options__list {
@@ -147,21 +155,21 @@ figure {
 }
 
 .movie__card {
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
   text-align: center;
   width: 25%;
 }
 
 .movie__card__title {
-  color: #fff;
-  font-size: 20px;
+  color: var(--white);
+  font-size: 1.25rem;
 }
 
 .movie__card__poster {
   cursor: pointer;
   transform: scale(0.9);
   transition: all ease 0.5s;
-  width: 200px;
+  width: 12.5rem;
 }
 
 .movie__card__poster:hover {
@@ -174,9 +182,9 @@ figure {
 .main__movie__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 2.5rem;
   justify-content: center;
-  margin: 40px 0;
+  margin: 2.5rem 0;
 }
 
 .movie {
@@ -185,12 +193,12 @@ figure {
 }
 
 .movie__title {
-  color: #fff;
-  font-size: 20px;
+  color: var(--white);
+  font-size: 1.25rem;
 }
 
 .movie__poster {
-  width: 250px;
+  width: 15.625rem;
 }
 
 /*Error message style*/
@@ -212,12 +220,12 @@ figure {
 
 .main__error__message {
   align-items: center;
-  background-color: #dddddd;
-  border-radius: 10px;
-  color: #000;
+  background-color: var(--light-grey);
+  border-radius: 0.625rem;
+  color: var(--black);
   display: flex;
   flex-direction: column;
-  font-size: 25px;
+  font-size: 1.5625rem;
   justify-content: space-around;
   height: 50%;
   padding: 1rem;
@@ -262,7 +270,7 @@ footer {
   }
 
   .movie__poster {
-    width: 200px;
+    width: 12.5rem;
   }
 }
 

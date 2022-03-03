@@ -8,8 +8,7 @@ const mainOptions = document.querySelector(".main__options");
 const movieSection = document.querySelector("#escolha");
 const errorMessageSection = document.querySelector(".main__error__message");
 const errorSection = document.querySelector(".center");
-var filmes = [];
-console.log(filmes);
+var movies = [];
 
 // Fazer a verificação de filmes repetidos
 
@@ -53,7 +52,7 @@ const selectedItem = async (id) => {
   moviesList.classList.remove("disabled");
   const error = `Este item já foi adicionado`;
   const data = await fetchMovie(id);
-  const found = filmes.find((item) => item.id === id);
+  const found = movies.find((item) => item.id === id);
   if (found) {
     errorWindow(error);
   } else {
@@ -64,7 +63,7 @@ const selectedItem = async (id) => {
     </section>
     `;
     moviesList.innerHTML = moviesList.innerHTML + movie;
-    filmes.push(data);
+    movies.push(data);
   }
 };
 
