@@ -22,6 +22,6 @@ Projeto adaptado de um desafio realizado na imersão dev da Alura.
 
 ## Autor
 
-Marcus Vinícius Gomes Urani
-[LinkedIn](https://linkedin.com/in/marcusurani)
-[Portfólio](https://marcusurani.netlify.app)
+- Marcus Vinícius Gomes Urani
+- [LinkedIn](https://linkedin.com/in/marcusurani)
+- [Portfólio](https://marcusurani.netlify.app)
