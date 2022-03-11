@@ -166,6 +166,7 @@ figure {
 }
 
 .movie__card__poster {
+  border-radius: 1rem;
   cursor: pointer;
   transform: scale(0.9);
   transition: all ease 0.5s;
@@ -198,6 +199,7 @@ figure {
 }
 
 .movie__poster {
+  border-radius: 1rem;
   width: 15.625rem;
 }
 

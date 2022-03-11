@@ -57,6 +57,7 @@ const selectedItem = async (id) => {
   moviesList.classList.remove("disabled");
   const error = `Este item já foi adicionado`;
   const data = await fetchMovie(id);
+  movieInput.value = "";
 
   // Faz a verificação de filmes repetidos
 
