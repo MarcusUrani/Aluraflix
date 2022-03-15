@@ -4,6 +4,7 @@ Projeto adaptado de um desafio realizado na imersão dev da Alura.
 
 ## Tecnologias Utilizadas
 
+- Visual Studio Code: Editor de código;
 - HTML: Estruturação da página;
 - CSS: Estilização da página;
 - JavaScript: Lógica para busca de dados da API, criação da lista de filmes, exibição dos itens na tela e criação das mensagens de erro;
