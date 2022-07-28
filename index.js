@@ -66,7 +66,8 @@ const selectedItem = async (id) => {
     errorWindow(error);
   } else {
     const movie = `
-    <section class="movie">
+    <section class="movie" id="movie-${id}">
+      <image title="Excluir" class="movie__delete--icon" src="https://cdn-icons-png.flaticon.com/512/2891/2891491.png" alt="Excluir" onClick="deleteMovie(${id})"/>
       <img class="movie__poster" src="https://image.tmdb.org/t/p/w300${data.poster_path}" alt="Poster filme"/>
       <p class="movie__title">${data.original_title}</p>
     </section>
@@ -89,4 +90,13 @@ const errorWindow = (errorMessage) => {
     <button class='button' onclick='closeWindow()'>Fechar</button>`;
   errorSection.classList.remove("disabled");
   errorMessageSection.innerHTML = htmlItem;
+};
+
+// Exclui o item selecionado
+const deleteMovie = (movieId) => {
+  const movie = movies.find((item) => item.id === movieId);
+  const index = movies.indexOf(movie);
+  movies.splice(index, 1);
+  const movieElement = document.querySelector(`#movie-${movieId}`);
+  movieElement.remove();
 };
