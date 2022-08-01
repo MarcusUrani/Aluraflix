@@ -280,6 +280,12 @@ footer {
   display: none;
 }
 
+.main__error__buttons {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
 /*Responsive style*/
 
 @media (max-width: 1100px) {
