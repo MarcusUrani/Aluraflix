@@ -277,8 +277,8 @@ footer {
 }
 
 .disabled {
-  pointer-events: none;
   display: none;
+  pointer-events: none;
 }
 
 .main__error__buttons {
