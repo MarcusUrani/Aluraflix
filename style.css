@@ -227,7 +227,6 @@ figure {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
   display: flex;
   height: 100%;
   justify-content: center;
@@ -235,6 +234,7 @@ figure {
   top: 0;
   width: 100%;
   z-index: 999;
+  -webkit-backdrop-filter: blur(13.5px);
 }
 
 .main__error__message {
@@ -245,8 +245,8 @@ figure {
   display: flex;
   flex-direction: column;
   font-size: 1.5625rem;
-  justify-content: space-around;
   height: 50%;
+  justify-content: space-around;
   padding: 1rem;
   position: absolute;
   width: 50%;
