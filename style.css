@@ -179,7 +179,7 @@ figure {
   opacity: 75%;
 }
 
-/*Choosen movies style*/
+/*Chosen movies style*/
 
 .main__movie__list {
   display: flex;
@@ -190,9 +190,9 @@ figure {
 }
 
 .movie {
+  position: relative;
   text-align: center;
   width: 20%;
-  position: relative;
 }
 
 .movie__delete--icon {
