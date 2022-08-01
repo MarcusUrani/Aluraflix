@@ -58,8 +58,8 @@ figure {
 .header__alura__logo {
   position: absolute;
   right: 0.9375rem;
-  top: 0.9375rem;
   transition: all ease 0.3s;
+  top: 0.9375rem;
   width: 2.5rem;
 }
 
