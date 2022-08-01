@@ -320,8 +320,8 @@ footer {
   }
 
   .movie__delete--icon {
-    top: 0.5rem;
     right: calc(35% - 0.5rem);
+    top: 0.5rem;
   }
 }
 
