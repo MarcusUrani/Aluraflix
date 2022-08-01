@@ -295,8 +295,8 @@ footer {
   }
 
   .movie__delete--icon {
-    top: 0.5rem;
     right: 0rem;
+    top: 0.5rem;
   }
 
   .movie__poster {
