@@ -92,6 +92,7 @@ const errorWindow = (errorMessage) => {
   messageSection.innerHTML = htmlItem;
 };
 
+// Exibe o modal de excluir item
 const deleteModal = (id) => {
   const htmlModal = `<p class='main__error'>Tem certeza que deseja excluir o item?</p>
     <div class="main__error__buttons">
