@@ -6,7 +6,7 @@ const searchButton = document.querySelector(".main__search__item");
 const moviesList = document.querySelector(".main__movie__list");
 const mainOptions = document.querySelector(".main__options");
 const movieSection = document.querySelector("#escolha");
-const errorMessageSection = document.querySelector(".main__error__message");
+const messageSection = document.querySelector(".main__error__message");
 const errorSection = document.querySelector(".center");
 var movies = [];
 
@@ -67,7 +67,7 @@ const selectedItem = async (id) => {
   } else {
     const movie = `
     <section class="movie" id="movie-${id}">
-      <image title="Excluir" class="movie__delete--icon" src="https://cdn-icons-png.flaticon.com/512/2891/2891491.png" alt="Excluir" onClick="deleteMovie(${id})"/>
+      <image title="Excluir" class="movie__delete--icon" src="https://cdn-icons-png.flaticon.com/512/2891/2891491.png" alt="Excluir" onClick="deleteModal(${id})"/>
       <img class="movie__poster" src="https://image.tmdb.org/t/p/w300${data.poster_path}" alt="Poster filme"/>
       <p class="movie__title">${data.original_title}</p>
     </section>
@@ -81,7 +81,7 @@ const selectedItem = async (id) => {
 
 const closeWindow = () => {
   errorSection.classList.add("disabled");
-  errorMessageSection.innerHTML = "";
+  messageSection.innerHTML = "";
 };
 
 // Monta a mensagem de erro
@@ -89,7 +89,17 @@ const errorWindow = (errorMessage) => {
   const htmlItem = `<p class='main__error'>${errorMessage}</p>
     <button class='button' onclick='closeWindow()'>Fechar</button>`;
   errorSection.classList.remove("disabled");
-  errorMessageSection.innerHTML = htmlItem;
+  messageSection.innerHTML = htmlItem;
+};
+
+const deleteModal = (id) => {
+  const htmlModal = `<p class='main__error'>Tem certeza que deseja excluir o item?</p>
+    <div class="main__error__buttons">
+      <button class='button' onclick='deleteMovie(${id})'>Sim</button>
+      <button class='button' onclick='closeWindow()'>Não</button>
+    </div>`;
+  errorSection.classList.remove("disabled");
+  messageSection.innerHTML = htmlModal;
 };
 
 // Exclui o item selecionado
@@ -99,4 +109,5 @@ const deleteMovie = (movieId) => {
   movies.splice(index, 1);
   const movieElement = document.querySelector(`#movie-${movieId}`);
   movieElement.remove();
+  errorSection.classList.add("disabled");
 };
